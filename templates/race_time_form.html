@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Race Time Predictor - 
+{% endblock %}
+
+{% block header %}
+	<h1>Race Time Predictor</h1>
+{% endblock %}
+
+{% block content %}
+  <form action="{{url_for('.race_time_prediction')}}" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="mass">Mass (kg)</label>
+        <input name="mass" type="text" class="form-control" id="mass" placeholder="70.0">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="race_type">Select Race Distance</label>
+        <select name="race_type" class="form-control" id="race_type">
+          <option selected>Choose...</option>
+          <option>Sprint</option>
+          <option>Olympic</option>
+          <option>Half-iron</option>
+          <option>Iron</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="swim_css">Swim CSS (min/100yd)</label>
+        <input name="swim_css" type="text" class="form-control" id="swim_css" placeholder="0:01:30">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="swim_if">Swim IF</label>
+        <input name="swim_if" type="text" class="form-control" id="swim_if" placeholder="0.92">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="bike_ftp">Bike FTP (W)</label>
+        <input name="bike_ftp" type="text" class="form-control" id="bike_ftp" placeholder="200">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="bike_if">Bike IF</label>
+        <input name="bike_if" type="text" class="form-control" id="bike_if" placeholder="0.90">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="run_ftpa">Run FTPa (min/mi)</label>
+        <input name="run_ftpa" type="text" class="form-control" id="run_ftpa" placeholder="0:07:00">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="run_if">Run IF</label>
+        <input name="run_if" type="text" class="form-control" id="run_if" placeholder="0.80">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}

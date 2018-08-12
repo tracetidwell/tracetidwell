@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Race Time Predictor - 
+{% endblock %}
+
+{% block header %}
+	<h1>Race Time Predictor</h1>
+{% endblock %}
+
+{% block content %}
+  <table border = 1>
+         {% for key, value in results.items() %}
+         
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+            
+         {% endfor %}
+  </table>
+
+  <table border = 1>
+         
+            <tr>
+              <th> </th>
+              <th> Swim </th>
+              <th> Bike </th>
+              <th> Run </th>
+              <th> Total </th>
+            </tr>
+
+            <tr>
+              <td> Time </td>
+              <td> {{results['swim_time_str']}} </td>
+              <td> {{results['bike_time_str']}} </td>
+              <td> {{results['run_time_str']}} </td>
+              <td> {{results['race_time_str']}} </td>
+            </tr>
+
+            <tr>
+              <td> TSS </td>
+              <td> {{results['swim_tss']}} </td>
+              <td> {{results['bike_tss']}} </td>
+              <td> {{results['run_tss']}} </td>
+              <td> {{results['race_tss']}} </td>
+            </tr>
+
+            <tr>
+              <td> Pace/Power </td>
+              <td> {{results['swim_pace']}} </td>
+              <td> {{results['bike_pace']}} </td>
+              <td> {{results['run_pace']}} </td>
+              <td> </td>
+            </tr>
+            
+  </table>
+{% endblock %}
