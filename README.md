@@ -1,2 +1,2 @@
 # tracetidwell
-Repository for my tracetidwell.com
+Repository for tracetidwell.com
